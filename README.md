@@ -20,3 +20,9 @@
 
 ● Only buyers can use nobody else
 ● Unauthorised Distribution of Loadstring is Very strictly prohibited. If caught will mean immediate blacklist
+
+● Attempting to Crack leads in IMMEDIATE blacklist
+
+● Enjoy the script!!!
+
+● Give suggestions n shi in the discord
