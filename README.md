@@ -12,4 +12,11 @@
 •Godlike [✗ ᴍʟᴅ_ɢᴏᴅʟɪᴋᴇ ツ]
 •Killer [Killer-Encripted]
 
-●
+●Owner of 𝐇𝟑𝐋𝐋 clan = H3LL_BILLY
+
+● Dont try crack🙏 we will find u if u do gng🥀
+
+# Rights n Shi
+
+● Only buyers can use nobody else
+● Unauthorised Distribution of Loadstring is Very strictly prohibited. If caught will mean immediate blacklist
