@@ -16,7 +16,7 @@
 
 ● Dont try crack🙏 we will find u if u do gng🥀
 
-# Rights n Shi
+# 𝕽𝖎𝖌𝖍𝖙𝖘 𝖆𝖓𝖉 𝖘𝖙𝖚𝖋𝖋
 
 ● Only buyers can use nobody else
 ● Unauthorised Distribution of Loadstring is Very strictly prohibited. If caught will mean immediate blacklist
