@@ -6,6 +6,149 @@ local window = library:AddWindow("𝐇𝟑𝐋𝐋 𝐕𝟑", {
     can_resize = false,
 })
 
-local Main = window:AddTab("Main")
-local folder = Main:AddFolder("Size Changers")
 
+local Main = window:AddTab("Main")
+local folder1 = Main:AddFolder("Auto Sizes")
+
+
+folder1:AddSwitch("Auto Size 2", function(Value)
+  autosize2 = Value
+  if autosize2 then
+    	if Value then
+			autoSizeLoop = task.spawn(function()
+				while task.wait(0) do
+					game:GetService("ReplicatedStorage").rEvents.changeSpeedSizeRemote:InvokeServer("changeSize", 1)
+				end
+			end)
+		else
+			if autoSizeLoop then
+				task.cancel(autoSizeLoop)
+				autoSizeLoop = nil
+			end
+		end
+	end
+end)
+  
+folder1:AddSwitch("Auto size 10", function(Value)
+    autosize10 = Value
+    if autosize10 then
+      	if Value then
+			autoSizeLoop = task.spawn(function()
+				while task.wait(0) do
+					game:GetService("ReplicatedStorage").rEvents.changeSpeedSizeRemote:InvokeServer("changeSize", 10)
+				end
+			end)
+		else
+			if autoSizeLoop then
+				task.cancel(autoSizeLoop)
+				autoSizeLoop = nil
+			end
+		end
+	end
+end)
+    
+    
+folder1:AddSwitch("Auto Size 50", function(Value)   
+    autosize50 = Value
+    if autosize50 then
+      	if Value then
+			autoSizeLoop = task.spawn(function()
+				while task.wait(0) do
+					game:GetService("ReplicatedStorage").rEvents.changeSpeedSizeRemote:InvokeServer("changeSize", 50)
+				end
+			end)
+		else
+			if autoSizeLoop then
+				task.cancel(autoSizeLoop)
+				autoSizeLoop = nil
+			end
+		end
+	end
+end)
+  
+  
+folder1:AddSwitch("Auto Size 100", function(Value)
+    autosize100 = Value
+    if autosize100 then
+      	if Value then
+			autoSizeLoop = task.spawn(function()
+				while task.wait(0) do
+					game:GetService("ReplicatedStorage").rEvents.changeSpeedSizeRemote:InvokeServer("changeSize", 100)
+				end
+			end)
+		else
+			if autoSizeLoop then
+				task.cancel(autoSizeLoop)
+				autoSizeLoop = nil
+			end
+		end
+	end
+end)
+    
+folder1:AddSwitch("Auto Size NAN | Very Tiny", function(Value)
+     autosizenan = Value
+     if autosizenan then
+       	if Value then
+			autoSizeLoop = task.spawn(function()
+				while task.wait(0) do
+					game:GetService("ReplicatedStorage").rEvents.changeSpeedSizeRemote:InvokeServer("changeSize", -9223372036854776000)
+				end
+			end)
+		else
+			if autoSizeLoop then
+				task.cancel(autoSizeLoop)
+				autoSizeLoop = nil
+			end
+		end
+	end
+end)
+     
+local folder2 = Main:AddFolder("Anti Shi") 
+     
+folder2:AddButton("Anti Afk", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/evxncodes/mainroblox/main/anti-afk", true))()
+end)
+
+folder2:AddButton("FPS Boost", function()  
+if not fpsBoostActive then
+    -- Turn on
+    fpsBoostActive = true
+    RemoveLag()
+    cleanupLoop = task.spawn(function()
+        while fpsBoostActive do
+            wait(30)
+            RemoveLag()
+        end
+    end)
+else
+    -- Turn off
+    fpsBoostActive = false
+    if cleanupLoop then
+        task.cancel(cleanupLoop)
+        cleanupLoop = nil
+    end
+end
+end)
+
+folder2:AddSwitch("Anti Accept Trade", function(Value)  
+antiaccepttrade = Value
+if antiaccepttrade then
+local OldNameCall = nil
+OldNameCall = hookmetamethod(game, "__namecall", function(self, ...)
+	local Args = {...}
+	if self.Name == "tradingEvent" and Args[1] == "acceptTrade" then
+		return
+	end
+	return OldNameCall(self, unpack(Args))
+end)
+end
+end)
+
+local folder3 = Main:AddFolder("Misc V1")
+  
+folder3:AddSwitch("Auto Spin Wheel", function(State)
+  autospinwheel = State
+  if autospinwheel then
+    
+  end
+end)
