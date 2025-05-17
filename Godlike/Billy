@@ -480,8 +480,8 @@ for _, v in pairs(game:GetService("Workspace").machinesFolder:GetDescendants()) 
 if v.Name == "neededDurability" and v.Value == 0 and game.Players.LocalPlayer.Character:FindFirstChild("LeftHand") and game.Players.LocalPlayer.Character:FindFirstChild("RightHand") then
 firetouchinterest(v.Parent.Rock, game:GetService("Players").LocalPlayer.Character.RightHand, 0)
 firetouchinterest(v.Parent.Rock, game:GetService("Players").LocalPlayer.Character.RightHand, 1)
-firetouchinterest(v.Parent.Rock, game:GetService("Players").LocalPlayer.Character.LeftHand, 0)
-firetouchinterest(v.Parent.Rock, game:GetService("Players").LocalPlayer.Character.LeftHand, 1)
+firetouchinterest(v.Parent.Rock, game:GetService("Players").LeftHand, 0)
+firetouchinterest(v.Parent.Rock, game:GetService("Players").LeftHand, 1)
 end
 end
 end
@@ -502,8 +502,8 @@ for _, v in pairs(game:GetService("Workspace").machinesFolder:GetDescendants()) 
 if v.Name == "neededDurability" and v.Value == 150000 and game.Players.LocalPlayer.Character:FindFirstChild("LeftHand") and game.Players.LocalPlayer.Character:FindFirstChild("RightHand") then
 firetouchinterest(v.Parent.Rock, game:GetService("Players").LocalPlayer.Character.RightHand, 0)
 firetouchinterest(v.Parent.Rock, game:GetService("Players").LocalPlayer.Character.RightHand, 1)
-firetouchinterest(v.Parent.Rock, game:GetService("Players").LocalPlayer.Character.LeftHand, 0)
-firetouchinterest(v.Parent.Rock, game:GetService("Players").LocalPlayer.Character.LeftHand, 1)
+firetouchinterest(v.Parent.Rock, game:GetService("Players").LeftHand, 0)
+firetouchinterest(v.Parent.Rock, game:GetService("Players").LeftHand, 1)
 end
 end
 end
@@ -523,7 +523,6 @@ if game:GetService("Players").LocalPlayer.Durability.Value >= 150000 then
 for _, v in pairs(game:GetService("Workspace").machinesFolder:GetDescendants()) do
 if v.Name == "neededDurability" and v.Value == 150000 and game.Players.LocalPlayer.Character:FindFirstChild("LeftHand") and game.Players.LocalPlayer.Character:FindFirstChild("RightHand") then
 firetouchinterest(v.Parent.Rock, game:GetService("Players").LocalPlayer.Character.RightHand, 0)
-firetouchinterest(v.Parent.Rock, game:GetService("Players").LocalPlayer.Character.RightHand, 1)
 firetouchinterest(v.Parent.Rock, game:GetService("Players").LeftHand, 0)
 firetouchinterest(v.Parent.Rock, game:GetService("Players").LeftHand, 1)
 end
@@ -567,7 +566,6 @@ if game:GetService("Players").LocalPlayer.Durability.Value >= 400000 then
 for _, v in pairs(game:GetService("Workspace").machinesFolder:GetDescendants()) do
 if v.Name == "neededDurability" and v.Value == 400000 and game.Players.LocalPlayer.Character:FindFirstChild("LeftHand") and game.Players.LocalPlayer.Character:FindFirstChild("RightHand") then
 firetouchinterest(v.Parent.Rock, game:GetService("Players").LocalPlayer.Character.RightHand, 0)
-firetouchinterest(v.Parent.Rock, game:GetService("Players").LocalPlayer.Character.RightHand, 1)
 firetouchinterest(v.Parent.Rock, game:GetService("Players").LeftHand, 0)
 firetouchinterest(v.Parent.Rock, game:GetService("Players").LeftHand, 1)
 end
@@ -577,7 +575,9 @@ end)
 end
 end)
 
-folder8:AddSwitch("Auto Eternal Rock | Normal", function(Value)
+local folder9 = AutoRock:AddFolder("Auto Eternal Rock | Normal")
+local autoeternalrocknormal, autoeternalrockfast
+folder9:AddSwitch("Auto Eternal Rock | Normal", function(Value)
 autoeternalrocknormal = Value
 if autoeternalrocknormal then
 selectrock = "Eternal Gym Rock"
@@ -599,7 +599,7 @@ end)
 end
 end)
 
-folder8:AddSwitch("Auto Eternal Rock | Fast", function(Value)
+folder9:AddSwitch("Auto Eternal Rock | Fast", function(Value)
 autoeternalrockfast = Value
 if autoeternalrockfast then
 selectrock = "Eternal Gym Rock"
@@ -611,97 +611,6 @@ if game:GetService("Players").LocalPlayer.Durability.Value >= 750000 then
 for _, v in pairs(game:GetService("Workspace").machinesFolder:GetDescendants()) do
 if v.Name == "neededDurability" and v.Value == 750000 and game.Players.LocalPlayer.Character:FindFirstChild("LeftHand") and game.Players.LocalPlayer.Character:FindFirstChild("RightHand") then
 firetouchinterest(v.Parent.Rock, game:GetService("Players").LocalPlayer.Character.RightHand, 0)
-firetouchinterest(v.Parent.Rock, game:GetService("Players").LocalPlayer.Character.RightHand, 1)
-firetouchinterest(v.Parent.Rock, game:GetService("Players").LeftHand, 0)
-firetouchinterest(v.Parent.Rock, game:GetService("Players").LeftHand, 1)
-end
-end
-end
-end)
-end
-end)
-
-folder8:AddSwitch("Auto Legends Rock | Normal", function(Value)
-autolegendsrocknormal = Value
-if autolegendsrocknormal then
-selectrock = "Legend Gym Rock"
-getgenv().autoFarm = true
-task.spawn(function()
-while getgenv().autoFarm do
-task.wait()
-if game:GetService("Players").LocalPlayer.Durability.Value >= 1000000 then
-for _, v in pairs(game:GetService("Workspace").machinesFolder:GetDescendants()) do
-if v.Name == "neededDurability" and v.Value == 1000000 and game.Players.LocalPlayer.Character:FindFirstChild("LeftHand") and game.Players.LocalPlayer.Character:FindFirstChild("RightHand") then
-firetouchinterest(v.Parent.Rock, game:GetService("Players").LocalPlayer.Character.RightHand, 0)
-firetouchinterest(v.Parent.Rock, game:GetService("Players").LocalPlayer.Character.RightHand, 1)
-firetouchinterest(v.Parent.Rock, game:GetService("Players").LocalPlayer.Character.LeftHand, 0)
-firetouchinterest(v.Parent.Rock, game:GetService("Players").LocalPlayer.Character.LeftHand, 1)
-end
-end
-end
-end)
-end
-end)
-
-folder8:AddSwitch("Auto Legends Rock | Fast", function(Value)
-autolegendsrockfast = Value
-if autolegendsrockfast then
-selectrock = "Legend Gym Rock"
-getgenv().autoFarm = true
-task.spawn(function()
-while getgenv().autoFarm do
-task.wait()
-if game:GetService("Players").LocalPlayer.Durability.Value >= 1000000 then
-for _, v in pairs(game:GetService("Workspace").machinesFolder:GetDescendants()) do
-if v.Name == "neededDurability" and v.Value == 1000000 and game.Players.LocalPlayer.Character:FindFirstChild("LeftHand") and game.Players.LocalPlayer.Character:FindFirstChild("RightHand") then
-firetouchinterest(v.Parent.Rock, game:GetService("Players").LocalPlayer.Character.RightHand, 0)
-firetouchinterest(v.Parent.Rock, game:GetService("Players").LocalPlayer.Character.RightHand, 1)
-firetouchinterest(v.Parent.Rock, game:GetService("Players").LeftHand, 0)
-firetouchinterest(v.Parent.Rock, game:GetService("Players").LeftHand, 1)
-end
-end
-end
-end)
-end
-end)
-
-local folder9 = AutoRock:AddFolder("Auto Muscle king Rock | Normal")
-local automusclekingrocknormal, automusclekingrockfast
-folder9:AddSwitch("Auto Muscle king Rock | Normal", function(Value)
-automusclekingrocknormal = Value
-if automusclekingrocknormal then
-selectrock = "Muscle King Gym Rock"
-getgenv().autoFarm = true
-task.spawn(function()
-while getgenv().autoFarm do
-task.wait(0.001)
-if game:GetService("Players").LocalPlayer.Durability.Value >= 5000000 then
-for _, v in pairs(game:GetService("Workspace").machinesFolder:GetDescendants()) do
-if v.Name == "neededDurability" and v.Value == 5000000 and game.Players.LocalPlayer.Character:FindFirstChild("LeftHand") and game.Players.LocalPlayer.Character:FindFirstChild("RightHand") then
-firetouchinterest(v.Parent.Rock, game:GetService("Players").LocalPlayer.Character.RightHand, 0)
-firetouchinterest(v.Parent.Rock, game:GetService("Players").LocalPlayer.Character.RightHand, 1)
-firetouchinterest(v.Parent.Rock, game:GetService("Players").LeftHand, 0)
-firetouchinterest(v.Parent.Rock, game:GetService("Players").LeftHand, 1)
-end
-end
-end
-end)
-end
-end)
-
-folder9:AddSwitch("Auto Muscle King Rock | Fast", function(Value)
-automusclekingrockfast = Value
-if automusclekingrockfast then
-selectrock = "Muscle King Gym Rock"
-getgenv().autoFarm = true
-task.spawn(function()
-while getgenv().autoFarm do
-task.wait()
-if game:GetService("Players").LocalPlayer.Durability.Value >= 5000000 then
-for _, v in pairs(game:GetService("Workspace").machinesFolder:GetDescendants()) do
-if v.Name == "neededDurability" and v.Value == 5000000 and game.Players.LocalPlayer.Character:FindFirstChild("LeftHand") and game.Players.LocalPlayer.Character:FindFirstChild("RightHand") then
-firetouchinterest(v.Parent.Rock, game:GetService("Players").LocalPlayer.Character.RightHand, 0)
-firetouchinterest(v.Parent.Rock, game:GetService("Players").LocalPlayer.Character.RightHand, 1)
 firetouchinterest(v.Parent.Rock, game:GetService("Players").LeftHand, 0)
 firetouchinterest(v.Parent.Rock, game:GetService("Players").LeftHand, 1)
 end
@@ -726,8 +635,8 @@ for _, v in pairs(game:GetService("Workspace").machinesFolder:GetDescendants()) 
 if v.Name == "neededDurability" and v.Value == 10000000 and game.Players.LocalPlayer.Character:FindFirstChild("LeftHand") and game.Players.LocalPlayer.Character:FindFirstChild("RightHand") then
 firetouchinterest(v.Parent.Rock, game:GetService("Players").LocalPlayer.Character.RightHand, 0)
 firetouchinterest(v.Parent.Rock, game:GetService("Players").LocalPlayer.Character.RightHand, 1)
-firetouchinterest(v.Parent.Rock, game:GetService("Players").LocalPlayer.Character.LeftHand, 0)
-firetouchinterest(v.Parent.Rock, game:GetService("Players").LocalPlayer.Character.LeftHand, 1)
+firetouchinterest(v.Parent.Rock, game:GetService("Players").LeftHand, 0)
+firetouchinterest(v.Parent.Rock, game:GetService("Players").LeftHand, 1)
 end
 end
 end
@@ -747,7 +656,6 @@ if game:GetService("Players").LocalPlayer.Durability.Value >= 10000000 then
 for _, v in pairs(game:GetService("Workspace").machinesFolder:GetDescendants()) do
 if v.Name == "neededDurability" and v.Value == 10000000 and game.Players.LocalPlayer.Character:FindFirstChild("LeftHand") and game.Players.LocalPlayer.Character:FindFirstChild("RightHand") then
 firetouchinterest(v.Parent.Rock, game:GetService("Players").LocalPlayer.Character.RightHand, 0)
-firetouchinterest(v.Parent.Rock, game:GetService("Players").LocalPlayer.Character.RightHand, 1)
 firetouchinterest(v.Parent.Rock, game:GetService("Players").LeftHand, 0)
 firetouchinterest(v.Parent.Rock, game:GetService("Players").LeftHand, 1)
 end
@@ -945,18 +853,18 @@ end)
 folder11:AddSwitch("Auto Rebirth Target", function(state)
 _autorebirthtarget = state
 if _autorebirthtarget then
-    _autorebirthActive = true
+    _autoRebirthActive = true
     task.spawn(function()
         local leaderstats = LocalPlayer:WaitForChild("leaderstats")
         local rebirths = leaderstats and leaderstats:WaitForChild("Rebirths")
         local remote = game:GetService("ReplicatedStorage"):WaitForChild("rEvents"):WaitForChild("rebirthRemote")
         if not (rebirths and remote) then
-            _autorebirthActive = false
+            _autoRebirthActive = false
             return
         end
-        while _autorebirthActive do
+        while _autoRebirthActive do
             if rebirths.Value >= _targetRebirthTarget then
-                _autorebirthActive = false
+                _autoRebirthActive = false
                 print("Target rebirths reached! Stopping auto rebirth.")
                 break
             end
@@ -1168,9 +1076,6 @@ end
 end
 end)    
     
-    
-    
-    
 local Teleports = window:AddTab("Teleports")
     
 Teleports:AddButton("Tiny | Island", function()
@@ -1212,16 +1117,9 @@ end)
 local Credits = window:AddTab("Credits")
     
     
-Credits:AddLabel("Co Developers:
-    ●Me |MoonHub|")
-Credits:AddLabel("H3LL OWNER:
-    ● Billy!") 
-Credits:AddLabel("Trusted People!!!:
-    ● Xeno
-    ● aabis
-    ● South
-    ●Lazer
-    ● Billy!!!!")
+Credits:AddLabel("Co Developers:\n    ●Me |MoonHub|")
+Credits:AddLabel("H3LL OWNER:\n    ● Billy!") 
+Credits:AddLabel("Trusted People!!!:\n    ● Xeno\n    ● aabis\n    ● South\n    ●Lazer\n    ● Billy!!!!")
 Credits:AddLabel("OP Scripts") 
 Credits:AddButton("Enchanted Hub", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/iblameaabis/Enchanted/refs/heads/main/Enchanted%20Hub%20On%20Top"))()
